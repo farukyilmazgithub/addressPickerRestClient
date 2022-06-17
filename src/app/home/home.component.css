@@ -1,0 +1,15 @@
+.center {
+    text-align: center;
+    margin: auto;
+    border: 3px solid green;
+    padding: 10px;
+  }
+
+  .image {
+    text-align: center;
+    width:128px;
+    height:128px;
+    margin: auto;
+    border: 3px solid rgb(128, 9, 0);
+    padding: 10px;
+  }
