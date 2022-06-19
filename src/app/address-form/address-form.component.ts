@@ -32,6 +32,7 @@ export class AddressFormComponent {
   townName: string;
   districtName: string;
   neighborhoodName: string;
+  addressLine1asPopulation:string;
   constructor(
     
     private addressService: AddressService,
@@ -50,8 +51,9 @@ export class AddressFormComponent {
     townID: ['', [Validators.required]],
     districtID: ['', [Validators.required]],
     neighborhoodID: ['', [Validators.required]],
-    })
-    
+    population: ['', [Validators.required]],
+      })
+
     get cityID() {
       return this.registrationForm.get('cityID');
     }
@@ -64,7 +66,14 @@ export class AddressFormComponent {
     get neighborhoodID() {
       return this.registrationForm.get('neighborhoodID');
     }
-    
+    get addressLine() {
+      return this.registrationForm.get('addressLine');
+    }
+    get population() {
+      return this.registrationForm.get('population');
+    }
+
+
     changeCity(e: any) {
       this.cityID?.setValue(e.target.value, {
       });
@@ -113,17 +122,31 @@ export class AddressFormComponent {
       const arr = toArray?.split(": ");
       let neighborhoodID = arr![1];
       this.neighborhoodService.findByID(neighborhoodID).subscribe(res => this.neighborhoodName = res.neighborhoodName);
+      console.log(this.addressLine1asPopulation);
+    }
+
+    changeText(e: any) {
+      this.population?.setValue(e.target.value, {
+      });
+
+      this.address.neighborhood = this.neighborhoodName;
+      const toArray =  this.neighborhoodID?.value;
+      const arr = toArray?.split(": ");
+      let neighborhoodID = arr![1];
+      this.neighborhoodService.findByID(neighborhoodID).subscribe(res => this.neighborhoodName = res.neighborhoodName);
+      console.log(this.addressLine1asPopulation);
     }
 
   ngOnInit() {
     this.cityService.findAll().subscribe(data => {
       this.cties = data;
     });
-
   }
 
   onSubmit() {
-    this.address.neighborhood = this.neighborhoodName;
+    console.log(this.addressLine1asPopulation);
+    
+    this.address.addressLine1 = this.addressLine1asPopulation;
     this.addressService.save(this.address).subscribe(result => this.gotoAddressList());
   }
 

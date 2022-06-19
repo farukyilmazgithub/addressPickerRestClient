@@ -62,18 +62,26 @@
             <select
               class="custom-select custom-select-lg mb-3"
               (change)="changeNeighborhood($event)"
-              formControlName="neighborhoodID"
+              formControlName="districtID"
             >
               <option value="">Choose Neighborhood</option>
               <option *ngFor="let neighborhood of neighborhoods" [ngValue]="neighborhood.neighborhoodID">
-                {{ neighborhood.neighborhoodName}}
+                {{ neighborhood.neighborhoodName }}
               </option>
             </select>
             
             <!-- error block -->
-            <div class="invalid-feedback" *ngIf="isSubmitted && neighborhoodID?.invalid">
+            <div class="invalid-feedback" *ngIf="isSubmitted && districtID?.invalid">
               <sup>*</sup>Please provide neighborhood name
             </div>
+          </div>
+
+          <div class="text-input" >
+            <h4> Population: <input type="text" id="addressLine1asPopulation" name="addressLine1asPopulation" 
+              formControlName="population" (change)="changeText($event)" [(ngModel)]="addressLine1asPopulation"></h4>
+          </div>
+
+          <div class="container mt-5" >
             <button type="submit" class="btn btn-danger btn-lg btn-block">
               Submit
             </button>
