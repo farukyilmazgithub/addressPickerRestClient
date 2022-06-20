@@ -5,9 +5,10 @@
     padding: 10px;
   }
 
-  .text-input{
-    text-align: center;
+  .form-control-plaintext{
+    text-align: left;
     margin: auto;
-    border: 20px ;
+    border: 5px;
+    border: 1px solid rgb(0, 0, 0);
     padding: 10px;
   }

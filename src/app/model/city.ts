@@ -1,6 +1,4 @@
 export class City {
-    cityID: BigInteger;
+    cityId: BigInteger;
     cityName: string;
-    plateNo: string;
-    phoneNo: string;
 }

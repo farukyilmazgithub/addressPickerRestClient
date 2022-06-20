@@ -9,78 +9,87 @@
             <select
               class="custom-select custom-select-lg mb-3"
               (change)="changeCity($event)"
-              formControlName="cityID"
+              formControlName="cityId"
             >
               <option value="">Choose City</option>
-              <option *ngFor="let city of cties" [ngValue]="city.cityID" >
+              <option *ngFor="let city of cties" [ngValue]="city.cityId" >
                 
                 {{ city.cityName }}
               </option>
             </select>
             
             <!-- error block -->
-            <div class="invalid-feedback" *ngIf="isSubmitted && cityID?.invalid">
-              <sup>*</sup>Please provide city name
-            </div>
-          </div>
-          <div class="container mt-5">
-            <select
-              class="custom-select custom-select-lg mb-3"
-              (change)="changeTown($event)"
-              formControlName="townID">
-
-              <option value="">Choose Town</option>
-              <option *ngFor="let town of towns" [ngValue]="town.townID">
-                {{ town.townName }}
-              </option>
-
-            </select>
-            
-            <!-- error block -->
-            <div class="invalid-feedback" *ngIf="isSubmitted && townID?.invalid">
-              <sup>*</sup>Please provide town name
+            <div class="invalid-feedback" *ngIf="isSubmitted && cityId?.invalid">
+              <sup>*</sup>Please provide city
             </div>
           </div>
           <div class="container mt-5">
             <select
               class="custom-select custom-select-lg mb-3"
               (change)="changeDistrict($event)"
-              formControlName="districtID"
-            >
+              formControlName="districtId">
+
               <option value="">Choose District</option>
-              <option *ngFor="let district of districts" [ngValue]="district.districtID">
+              <option *ngFor="let district of districts" [ngValue]="district.districtId">
                 {{ district.districtName }}
               </option>
+
             </select>
             
             <!-- error block -->
-            <div class="invalid-feedback" *ngIf="isSubmitted && districtID?.invalid">
-              <sup>*</sup>Please provide district name
+            <div class="invalid-feedback" *ngIf="isSubmitted && districtId?.invalid">
+              <sup>*</sup>Please provide district
             </div>
           </div>
           <div class="container mt-5">
             <select
               class="custom-select custom-select-lg mb-3"
               (change)="changeNeighborhood($event)"
-              formControlName="districtID"
+              formControlName="neighborhoodId"
             >
               <option value="">Choose Neighborhood</option>
-              <option *ngFor="let neighborhood of neighborhoods" [ngValue]="neighborhood.neighborhoodID">
+              <option *ngFor="let neighborhood of neighborhoods" [ngValue]="neighborhood.neighborhoodId">
                 {{ neighborhood.neighborhoodName }}
               </option>
             </select>
             
             <!-- error block -->
-            <div class="invalid-feedback" *ngIf="isSubmitted && districtID?.invalid">
-              <sup>*</sup>Please provide neighborhood name
+            <div class="invalid-feedback" *ngIf="isSubmitted && neighborhoodId?.invalid">
+              <sup>*</sup>Please provide neighborhood
+            </div>
+          </div>
+          <div class="container mt-5">
+            <select
+              class="custom-select custom-select-lg mb-3"
+              (change)="changeStreet($event)"
+              formControlName="streetId"
+            >
+              <option value="">Choose Street</option>
+              <option *ngFor="let street of streets" [ngValue]="street.streetId">
+                {{ street.streetName }}
+              </option>
+            </select>
+            
+            <!-- error block -->
+            <div class="invalid-feedback" *ngIf="isSubmitted && streetId?.invalid">
+              <sup>*</sup>Please provide street
             </div>
           </div>
 
           <div class="text-input" >
-            <h4> Population: <input type="text" id="addressLine1asPopulation" name="addressLine1asPopulation" 
-              formControlName="population" (change)="changeText($event)" [(ngModel)]="addressLine1asPopulation"></h4>
+            <h4> Address Line 1: <input type="text" class="form-control-plaintext" id="addressLine1" name="addressLine1" 
+              formControlName="address"  [(ngModel)]="addressLine1"></h4>
           </div>
 
+          <div class="text-input" >
+            <h4> Address Line 2: <input type="text" class="form-control-plaintext" id="addressLine2" name="addressLine2" 
+              formControlName="address"  [(ngModel)]="addressLine2"></h4>
+          </div>
+
+          <div class="text-input" >
+            <h4> Description: <input type="text" class="form-control-plaintext" id="description" name="description" 
+              formControlName="address"  [(ngModel)]="description"></h4>
+          </div>
           <div class="container mt-5" >
             <button type="submit" class="btn btn-danger btn-lg btn-block">
               Submit

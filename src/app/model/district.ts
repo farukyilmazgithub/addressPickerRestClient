@@ -1,5 +1,5 @@
 export class District {
-    districtID: BigInteger;
+    districtId: BigInteger;
     districtName: string;
-    town_townID: string;
+    city_city_id: string;
 }

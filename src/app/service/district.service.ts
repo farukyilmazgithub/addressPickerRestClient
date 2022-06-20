@@ -11,18 +11,18 @@ export class DistrictService {
   private districtUrl: string;
 
   constructor(private http: HttpClient) {
-    this.districtUrl = 'http://localhost:8080/api/city/town/district/';
+    this.districtUrl = 'http://localhost:8080/api/city/district/';
   }
 
   public findAll(): Observable<District[]> {
     return this.http.get<District[]>(this.districtUrl);
   }
 
-  public findByTownID(id:any): Observable<District[]> {
+  public findByCityId(id:any): Observable<District[]> {
     return this.http.get<District[]>(this.districtUrl + id);
   }
 
-  public findByID(id:any): Observable<District> {
+  public findById(id:any): Observable<District> {
     return this.http.get<District>('http://localhost:8080/api/district/' + id);
   }
 }

@@ -1,9 +1,10 @@
 export class Address {
-    addressID: BigInteger;
+    addressId: BigInteger;
     city: string;
-    town: string;
     district: string;
     neighborhood: string;
+    street: string;
     addressLine1: string;
     addressLine2: string;
+    description: string;
 }

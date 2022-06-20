@@ -1,6 +1,5 @@
 export class Neighborhood {
-    neighborhoodID: BigInteger;
+    neighborhoodId: BigInteger;
     neighborhoodName: string;
-    ZipCode: string;
-    district_districtID: string;
+    district_district_id: string;
 }

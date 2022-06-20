@@ -18,7 +18,7 @@ export class CityService {
     return this.http.get<City[]>(this.cityUrl);
   }
 
-  public findByID(id:any): Observable<City> {
+  public findById(id:any): Observable<City> {
     return this.http.get<City>(this.cityUrl + id);
   }
 }
