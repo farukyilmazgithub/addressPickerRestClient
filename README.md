@@ -1,7 +1,7 @@
 # addressRegisterRestClient
 # created by faruk yilmaz 17.06.2022
 
-addressPickerRestServer on : https://github.com/farukyilmazgithub/addressPickerRestServer
+addressRegisterRestServer on : https://github.com/farukyilmazgithub/addressPickerRestServer
 
 # AngularT
 
